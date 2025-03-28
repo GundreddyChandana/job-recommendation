@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Recommendations</title>
+</head>
+<body>
+    <h1>Recommended Jobs</h1>
+    <ul>
+        {% for job in jobs %}
+        <li>
+            <strong>{{ job.jobTitle }}</strong> - {{ job.location }}<br>
+            Experience: {{ job.minExp }} - {{ job.maxExp }} years<br>
+            Skills: {{ job.skills }}<br>
+            Similarity Score: {{ job.similarity|round(2) }}
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="/home">Search Again</a>
+</body>
+</html>
